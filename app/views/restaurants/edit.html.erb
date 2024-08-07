@@ -1,0 +1,9 @@
+<h1><%= action_name.capitalize %> <%= "#{@restaurant.name}?"%></h1>
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian'] %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+<%= link_to 'Back to list', restaurants_path, class: 'btn btn-secondary' %>
